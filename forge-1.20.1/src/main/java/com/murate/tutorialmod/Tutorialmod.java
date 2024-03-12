@@ -1,6 +1,7 @@
 package com.murate.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import com.murate.tutorialmod.block.ModBlocks;
 import com.murate.tutorialmod.item.ModCreativeModTabs;
 import com.murate.tutorialmod.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -44,6 +45,7 @@ public class Tutorialmod
 
         ModCreativeModTabs.register(modEventBus);   //将创建的创造标签注册到总线
         ModItems.register(modEventBus);             //将物品注册到总线
+        ModBlocks.register(modEventBus);             //将方块注册到总线
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);

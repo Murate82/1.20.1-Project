@@ -13,6 +13,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             ()-> new Item(new Item.Properties()));
+
+
     public static  void register(IEventBus eventBus){ //总线，用于注册和处理
         ITEMS.register(eventBus);//将物品注册指定到总线中
     }
