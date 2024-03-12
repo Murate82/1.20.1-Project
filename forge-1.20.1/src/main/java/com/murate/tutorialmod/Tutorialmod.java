@@ -41,11 +41,11 @@ public class Tutorialmod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modEventBus.addListener(this::commonSetup);
-        ModCreativeModTabs.register(modEventBus);
-        ModItems.register(modEventBus);
-        MinecraftForge.EVENT_BUS.register(this);
 
+        ModCreativeModTabs.register(modEventBus);   //将创建的创造标签注册到总线
+        ModItems.register(modEventBus);             //将物品注册到总线
+        MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
 
     }
@@ -55,7 +55,7 @@ public class Tutorialmod
 
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
+    private void addCreative(BuildCreativeModeTabContentsEvent event)//向标签中添加物品
     {
 //        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)//添加到哪个标签
 //            event.accept(ModItems.SAPPHIRE);//添加物品
